@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
     `<h1>{{ listName }}</h1>
     <div [hidden]='todos.length'>Aucun élément</div>
     <ul>
-      <li *ngFor='let todo of todos; let i = index; let first = first'>
+      <li *ngFor='let todo of todos; let i = index; let first = first;
+      let  odd = odd' [ngClass]="{ 'alternate': !!odd }">
         <hr *ngIf='i>0'>
         ({{i}}) {{todo}}  : premier de la liste : {{first}}
             Recherche Google Associé :
